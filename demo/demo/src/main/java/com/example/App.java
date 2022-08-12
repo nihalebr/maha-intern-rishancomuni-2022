@@ -33,7 +33,7 @@ public class App {
         + "Content_Type_outgoing TEXT,"
         + "Referer TEXT,"
         + "Status TEXT,"
-        + "TimeTaken_in_ms TEXT,"
+        + "TimeTaken_in_ms NUMERIC,"
         + "Size TEXT,"
         + "SessionId TEXT,"
         + "Protocol TEXT,"
