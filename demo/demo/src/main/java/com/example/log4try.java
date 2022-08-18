@@ -50,12 +50,13 @@ public class log4try {
           ";" +
           timeBigURL.getString(4)
         );
-        if (prevTime != 0 && (prevTime - timeBigURL.getLong(4)) > 2) { //in ms.
+        if (prevTime == 0 || (prevTime - timeBigURL.getLong(4)) > 2000) { //in ms.
           // map get and put
-          pageUrl.add(timeBigURL.getString(3));
-          pageGrp.put(pageName + pageNo, pageUrl);
+          pageUrl = new ArrayList<>();
           pageNo++;
         }
+        pageUrl.add(timeBigURL.getString(3));
+        pageGrp.put(pageName + pageNo, pageUrl);
         prevTime = timeBigURL.getLong(4);
       }
     }
